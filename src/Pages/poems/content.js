@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useContext} from 'react'
+import React, {useEffect, useState, useContext,} from 'react'
 import { Link } from 'react-router-dom'
 
 import Photo from 'assets/photo/photo.png'
@@ -22,6 +22,7 @@ export default function Header(props) {
     const [loading, setLoading] = useState(false)
     const _StoreContent  = useContext(StoreContent)
     const _poems= _StoreContent?.state?.poems|| []
+    const configs = _StoreContent?.state?.configs|| {}
 
     // console.log(_poems)
 
@@ -113,7 +114,7 @@ export default function Header(props) {
 
     return (
         <>
-        <Navbar />
+        <Navbar configs={configs} />
             <CollectionLayout
                 heading={"Poems"}
                 description={"A  poets page of poem inked from the heart, for poetry has always been the way for heart to  express its innate emotions."}

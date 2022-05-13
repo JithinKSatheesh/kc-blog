@@ -4,7 +4,8 @@ const stateModal = {
     novels : [],
     poems : [],
     worlds : [],
-    shorts : []
+    shorts : [],
+    configs : {}
     
   }
   
@@ -33,6 +34,9 @@ const StateProvider = ( { children } ) => {
           return newState;
         case 'initShorts':
           newState = {...state, shorts : [ ...action?.payload] }
+          return newState;
+        case 'initConfigs':
+          newState = {...state, configs : {...action?.payload} }
           return newState;
         case 'clearState' :
           return {  ...stateModal  }

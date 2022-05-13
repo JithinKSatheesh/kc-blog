@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { wrap } from "popmotion";
 
 const variants = {
   enter: (direction) => {
@@ -35,14 +34,15 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-export default function Carousal({images}) {
-  const [[page, direction], setPage] = useState([0, 0]);
+export default function Carousal(props) {
+
+  const {page, direction, setPage, images, imageIndex} = props
+
 
   // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
   // then wrap that within 0-2 to find our image ID in the array below. By passing an
   // absolute page index as the `motion` component's `key` prop, `AnimatePresence` will
   // detect it as an entirely new image. So you can infinitely paginate as few as 1 images.
-  const imageIndex = wrap(0, images.length, page);
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);

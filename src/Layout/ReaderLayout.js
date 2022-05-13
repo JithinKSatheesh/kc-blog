@@ -12,7 +12,7 @@ const Backarrow = () => <svg width="24" height="24" viewBox="0 0 24 24"><path fi
 
 export default function Readerlayout(props) {
 
-    const {nextClick, prevClick} = props
+    const {nextClick, prevClick, showNav = false} = props
 
 
     return (
@@ -40,9 +40,13 @@ export default function Readerlayout(props) {
                     <div>
                         <BtnIo height={"40px"} width="40px" />
                     </div>
-                    <div className='flex'>
-                        <BtnLeft onClick={prevClick} height={"40px"} width="40px" className='mr-4 cursor-pointer' />
-                        <BtnRight onClick={nextClick} height={"40px"} width="40px" className='cursor-pointer' />
+                    <div>
+                        {showNav &&
+                        <div className='flex'>
+                            <BtnLeft onClick={prevClick} height={"40px"} width="40px" className='mr-4 cursor-pointer' />
+                            <BtnRight onClick={nextClick} height={"40px"} width="40px" className='cursor-pointer' />
+                        </div>
+                        }
                     </div>
             </div>
 

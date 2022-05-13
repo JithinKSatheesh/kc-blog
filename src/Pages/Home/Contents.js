@@ -14,7 +14,7 @@ export default function Contents(props) {
     return (
         <>
         <div className="py-16 bg-black-2">
-            <div className="grid grid-cols-2 max-w-sm mx-auto">
+            <div className="grid grid-cols-2 max-w-sm lg:max-w-2xl mx-auto">
                     <div> <Link to="/poems"> <img src={Poem} alt="" /> </Link></div>
                     <div> <Link to="/worlds"> <img src={Worlds} alt="" /></Link> </div>
                     <div> <Link to="/novels"> <img src={Novels} alt="" /> </Link></div>

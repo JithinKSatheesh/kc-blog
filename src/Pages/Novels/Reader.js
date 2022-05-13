@@ -55,6 +55,7 @@ export default function Reader(props) {
         <>
             <Navbar />
             <Readerlayout
+                showNav={true}
                 heading={_content?.title}
                 body={_content?.body}
                 back={`novels/${chapterId}`}

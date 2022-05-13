@@ -34,3 +34,7 @@ export function fetchWorldById (id, query) {
 export function fetchShorts (query) {
     return  axios.get(`${BASE_URL}shorts?${query}`)
 }
+
+export function fetchConfigs (query) {
+    return  axios.get(`${BASE_URL}website?${query}`)
+}
