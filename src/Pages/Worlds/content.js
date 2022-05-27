@@ -109,7 +109,7 @@ export default function Header(props) {
         <Navbar />
             <CollectionLayout
                 heading={"Worlds"}
-                description={"Based on Worlds, these are one shots that may or may not have a sequel. Some of them are a part of a series while others are stand-alone."}
+                description={"A fictional world with laws, culture and norms of  its own. Some of these are experimental and may  or may not get any Light Novel or Shorts based on it."}
                 BodyCard={BodyCard}
                 data={[..._worlds]}
                 loading={loading}

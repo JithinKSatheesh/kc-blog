@@ -20,9 +20,15 @@ export default function Hero(props) {
     const [[page, direction], setPage] = useState([0, 0]);
 
     const images = [
-        configs?.carousal_image_1,
-        configs?.carousal_image_2,
-        configs?.carousal_image_3,
+       { image : configs?.carousal_image_1,
+            link : configs?.carousal_image_1_link
+        },
+       { image : configs?.carousal_image_2,
+            link : configs?.carousal_image_2_link
+        },
+       { image : configs?.carousal_image_3,
+            link : configs?.carousal_image_3_link
+        },
     ]
 
     const imageIndex = wrap(0, images.length, page);

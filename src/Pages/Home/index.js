@@ -19,8 +19,8 @@ export default function Home(props) {
     const { ScrollToTop } = useScrollBehaviours()
 
     const [loading, setLoading] = useState(false)
+    
     const _StoreContent  = useContext(StoreContent)
-
     const _config = _StoreContent?.state?.configs|| {}
 
     const getConfigs = async() => {

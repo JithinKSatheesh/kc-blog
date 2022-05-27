@@ -11,80 +11,88 @@ import { Store as StoreContent } from 'Store/contentStore'
 
 const _links = [
     {
-        label : "Home",
-        to : "/"
+        label: "Home",
+        to: "/"
     },
     {
-        label : "Worlds",
-        to : "/worlds"
+        label: "Worlds",
+        to: "/worlds"
     },
     {
-        label : "Novels",
-        to : "/novels"
+        label: "Novels",
+        to: "/novels"
     },
     {
-        label : "Shorts",
-        to : "/shorts"
+        label: "Shorts",
+        to: "/shorts"
     },
     {
-        label : "Poems",
-        to : "/poems"
+        label: "Poems",
+        to: "/poems"
     },
-    {
-        label : "Shop",
-        to : "/shop"
-    },
+    // {
+    //     label : "Shop",
+    //     to : "/shop"
+    // },
 ]
 
 export default function Index(props) {
 
-    
+
     const [open, setOpen] = useState(false)
-    
+
 
     return (
         <>
-        <div className=" bg-yellow w-full shadow p-3 fixed z-40">
-            <div className='flex justify-between'>
-                <div> 
-                    <div className="xl:hidden">
-                        <Burger width={"20px"}  onClick={() => setOpen(true)} className="cursor-pointer" /> 
+            <div className=" bg-yellow w-full shadow p-3 fixed z-40">
+                <div className='flex justify-between'>
+                    <div>
+                        <div className="xl:hidden">
+                            <Burger width={"20px"} onClick={() => setOpen(true)} className="cursor-pointer" />
+                        </div>
                     </div>
+                    <div> <Link to="/">  <Title className='w-56' /> </Link> </div>
+                    <div></div>
                 </div>
-                <div> <Link to="/">  <Title className='w-56' /> </Link> </div>
-                <div></div>
+                <div className="hidden xl:block">
+                    <NavMenuWeb />
+                </div>
             </div>
-            <div className="hidden xl:block">
-                <NavMenuWeb />
-            </div>
-        </div>
-        <div className="hidden xl:block xl:py-4"></div>
-        <NavMenu open={open} setOpen={setOpen}  />
-            
+            <div className="hidden xl:block xl:py-4"></div>
+            <NavMenu open={open} setOpen={setOpen} />
+
         </>
     )
 }
 
 const NavMenuWeb = (props) => {
 
+    const _StoreContent = useContext(StoreContent)
+    const _config = _StoreContent?.state?.configs || {}
+
+    console.log(_config, "PPPP")
+
     return (
         <div className="py-2 flex justify-center items-center text-xs">
             {
                 _links.map(item =>
-                <div key={item?.label} className="text-black font-bold px-4">
-                    <Link to={item?.to}> {item?.label}</Link>
-                </div>)
+                    <div key={item?.label} className="text-black font-bold px-4">
+                        <Link to={item?.to}> {item?.label}</Link>
+                    </div>)
             }
+            <div className="text-black font-bold px-4">
+                <a href={_config?.attributes?.link_1} target="_blank" > Shop</a>
+            </div>
         </div>
     )
 }
 
 const NavMenu = (props) => {
 
-    const {open = false, setOpen} = props
-    
-    const _StoreContent  = useContext(StoreContent)
-    const _config = _StoreContent?.state?.configs|| {}
+    const { open = false, setOpen } = props
+
+    const _StoreContent = useContext(StoreContent)
+    const _config = _StoreContent?.state?.configs || {}
 
     console.log(_config, "##")
 
@@ -103,12 +111,15 @@ const NavMenu = (props) => {
                                 <Link to={item?.to}> {item?.label}</Link>
                             </div>)
                     }
+                    <div className="text-center heading text-3xl font-bold pb-8">
+                        <a href={_config?.attributes?.link_1} target="_blank" > Shop</a>
+                    </div>
                 </div>
                 <div className="h-1 bg-yellow w-full"></div>
-                <FooterIcon configs={_config?.attributes}   />
+                <FooterIcon configs={_config?.attributes} />
 
             </div>
-                
+
         </div>
     )
 }

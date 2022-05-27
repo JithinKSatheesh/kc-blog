@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {ThreeCircles} from 'react-loader-spinner'
+import Loader from 'assets/loader.gif'
 
 export function CollectionLayout(props) {
 
@@ -19,7 +20,8 @@ export function CollectionLayout(props) {
             <BodyLayout>
                 {
                     loading && <div className='py-3 text-center flex justify-center'>
-                        <ThreeCircles color='#D8C879' />
+                        {/* <ThreeCircles color='#D8C879' /> */}
+                        <img src={Loader} alt=""  className='h-32 2-32'/>
                     </div>
                 }
                 {[...data].map(item => (

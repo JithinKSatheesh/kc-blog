@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 
 const variants = {
   enter: (direction) => {
@@ -48,18 +49,23 @@ export default function Carousal(props) {
     setPage([page + newDirection, newDirection]);
   };
 
+  const navigate = useNavigate();
+
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
+        {console.log(images[imageIndex]?.link)}
+        {/* <Link to={`${images[imageIndex]?.link}`}> */}
         <motion.img
           key={page}
-          src={images[imageIndex]}
+          src={images[imageIndex]?.image}
           custom={direction}
           variants={variants}
           initial="enter"
           animate="center"
           exit="exit"
-          className="absolute h-full "
+          className="absolute  lg:h-full"
+          onClick = {()=> window.open(`${images[imageIndex]?.link}`)}
           transition={{
             x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 }
@@ -77,6 +83,8 @@ export default function Carousal(props) {
             }
           }}
         />
+        {/* </Link> */}
+
       </AnimatePresence>
       <div className="next" onClick={() => paginate(1)}>
         {"‣"}

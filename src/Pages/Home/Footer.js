@@ -32,7 +32,7 @@ export default function Footer(props) {
                 </div>
             </div>
             <div className="py-6 bg-black-2">
-                    <div className="container mx-auto">
+                    <div className="container max-w-5xl mx-auto">
                 <div className="flex flex-wrap justify-between items-center">
                         <div className='text-center  mx-auto lg:ml-0'>
                             <img src={Title} className="w-56 mx-auto" alt="" />
@@ -62,14 +62,14 @@ export const FooterIcon = (props) => {
         <div className='mx-2'>
             <a target={"_blank"} href={configs?.insta_link} > <Icon_insta className='w-8' /> </a>
         </div>
-        <div className='mx-2'>
+        {/* <div className='mx-2'>
             <a target={"_blank"} href={configs?.link_1} > <Icon_rb className='w-8' /> </a>
-        </div>
+        </div> */}
         <div className='mx-2'>
             <a target={"_blank"} href={configs?.patreon_link} > <Icon_io className='w-8' /> </a>
         </div>
         <div className='mx-2'>
-            <a target={"_blank"} href={configs?.link_1} > <Icon_os className='w-8' /> </a>
+            <a target={"_blank"} href={'https://tapas.io/merchshop'} > <Icon_os className='w-8' /> </a>
         </div>
 
     </div>)
