@@ -73,7 +73,7 @@ const NavMenuWeb = (props) => {
     console.log(_config, "PPPP")
 
     return (
-        <div className="py-2 flex justify-center items-center text-xs">
+        <div className="py-2 flex justify-center items-center text-">
             {
                 _links.map(item =>
                     <div key={item?.label} className="text-black font-bold px-4">

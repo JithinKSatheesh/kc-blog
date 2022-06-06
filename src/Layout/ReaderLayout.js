@@ -29,7 +29,7 @@ export default function Readerlayout(props) {
                     <div><Textsize height="20px" /></div>
                 </div>
             </div>
-            <div className="text-base px-3 py-40">
+            <div className="xl:text-lg px-3 py-40">
                 <MarkdownView
                     markdown={props?.body}
                     options={{ tables: false, emoji: true }}
