@@ -23,11 +23,11 @@ export default function About(props) {
                 }}>
 
                     <div className="container max-w-5xl mx-auto pt-44 lg:pt-44 2xl:pt-56 pb-8 px-9">
-                        <div className="  font-bold text-center text-xl xl:text-2xl text-white heading  uppercase leading-16">
+                        <div className="  font-bold text-center lg:text-left text-xl xl:text-2xl text-white heading  uppercase leading-16">
                             About  <br />
                             Hand Written chronicles
                         </div>
-                        <div className=' text-center text-sm pt-3 pb-8 text-white text-light'>
+                        <div className=' text-center lg:text-left text-[15px] pt-3 pb-8 text-white text-light'>
                             {configs?.about_author ?
                             <p>
                                 <MarkdownView markdown={configs?.about_author} />
@@ -41,11 +41,11 @@ export default function About(props) {
                             </div>
                             }
                         </div>
-                        <div className="text-center font-bold text-xl xl:text-2xl text-white heading  uppercase leading-16 mt-12">
+                        <div className="text-center lg:text-left font-bold text-xl xl:text-2xl text-white heading  uppercase leading-16 mt-12">
                             About the
                             Narrator
                         </div>
-                        <div className=' text-center text-sm pt-3 pb-8 text-white'>
+                        <div className=' text-center lg:text-left text-[15px] pt-3 pb-8 text-white'>
                             {configs?.about_website ?
                             <p>
                                 <MarkdownView markdown={configs?.about_website} />

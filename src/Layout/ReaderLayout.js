@@ -25,7 +25,7 @@ export default function Readerlayout(props) {
                         <Backarrow /> 
                     </Link>
                     </div>
-                    <div className='text-xs'> {props?.heading} </div>
+                    <div className='text'> {props?.heading} </div>
                     <div><Textsize height="20px" /></div>
                 </div>
             </div>

@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useEffect } from 'react';
 import {
   Routes,
   Route,
 } from "react-router-dom";
+
+import ReactGA from 'react-ga'
 
 import Home from './Pages/Home';
 
@@ -24,6 +27,13 @@ import ShortsReader from 'Pages/Shorts/Reader'
 import {StateProvider as ContentProvider} from 'Store/contentStore'
 
 function App() {
+
+  ReactGA.initialize('G-8PLTEN759C', [])
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, [])
+
   return (
     <div className="App">
       <ContentProvider>
